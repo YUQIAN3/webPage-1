@@ -12,9 +12,14 @@
   </div>
 </template>
 <script lang="ts">
+import { inject, Ref } from '@vue/runtime-core';
 import Topnav from "../components/Topnav.vue";
 export default {
   components: { Topnav },
+  setup(){
+  const asideVisible=inject<Ref<boolean>>('xxx')
+    console.log(asideVisible?.value)
+  }
 };
 </script>
 <style lang="scss" scoped>
