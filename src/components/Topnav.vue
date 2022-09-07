@@ -7,6 +7,14 @@
        </ul>
   </div>
 </template>
+<script lang="ts">
+import { inject, Ref } from '@vue/runtime-core'
+  export default {
+//   setup(){
+//    const asideVisible=inject<Ref<boolean>>('xxx')
+//   console.log('2222')
+ }
+</script>
 
 <style lang="scss" scoped>
    .topnav{
