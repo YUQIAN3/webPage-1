@@ -47,6 +47,7 @@ export default {
     }
     > .content{
       flex-grow: 1;
+      padding-top:70px;
       padding-left:175px;
       @media (max-width:500px) {
         padding-left: 0;
