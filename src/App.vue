@@ -3,6 +3,7 @@
 </template>
 
 <script lang="ts">
+import { router } from './router'
 import { ref } from 'vue'
 import { provide } from 'vue'
 export default {
@@ -12,6 +13,12 @@ export default {
     
     const asideVisible=ref(width<=500?false:true)
     provide('asideVisible',asideVisible)
+    router.afterEach(()=>{
+      if(width<=500){
+        asideVisible.value=false
+      }
+      
+    })
   }
 }
 </script>
