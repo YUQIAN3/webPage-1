@@ -5,6 +5,7 @@
           <li>菜单1</li>
           <li>菜单2</li>
        </ul>
+       <span class="toggleAside"></span>
   </div>
 </template>
 <script lang="ts">
@@ -40,8 +41,18 @@ import { inject, Ref } from 'vue'
       > li{
       margin: 0 1em;
     }
-    
+    }
+    @media(max-width: 500px){
+    > .menu{
+      display: none;
+      
+    }
+    > .logo{
+      margin: 0 auto;
+      color:blue;
     }
   }
+  }
+ 
 
 </style>
