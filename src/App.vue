@@ -3,14 +3,13 @@
 </template>
 
 <script lang="ts">
-import { ref } from '@vue/reactivity'
-import { provide } from '@vue/runtime-core'
+import { ref } from 'vue'
+import { provide } from 'vue'
 export default {
   name: 'App',
   setup(){
     const asideVisible=ref(false)
-    provide('xxx',asideVisible)
-    console.log(asideVisible.value)
+    provide('asideVisible',asideVisible)
   }
 }
 </script>
