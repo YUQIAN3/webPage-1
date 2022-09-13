@@ -3,11 +3,10 @@
     button 示例
    <h1> 示例</h1>
    <div>
-    <Button  @click="onClick"
-             @focus="onClick"
-             @mouseover="onClick"
-             size="small"
-     >你好</Button>
+    <Button >你好</Button>
+    <Button  theme="button" >按钮</Button>
+    <Button theme="link">链接</Button>
+    <Button theme="text" >文本</Button>
    </div>
  
   </div>
@@ -16,11 +15,6 @@
  import Button from '../lib/Button.vue'
 export default {
   components:{Button},
-  setup(){
-    const onClick=()=>{
-      console.log('hello')
-    }
-    return {onClick}
-  }
+  
 }
 </script>
