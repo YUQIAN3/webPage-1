@@ -1,17 +1,13 @@
 <template>
-  <div>
+  <div class="gulu">
     <button class="gulu-button"
-    >  Button 按钮</button>
+    >  <slot></slot></button>
   </div>
 </template>
 <style lang="scss" scoped>
- div {
+ button {
   border: 1px solid red;
-$h: 32px;
-$border-color: #d9d9d9;
-$color: #333;
-$blue: #40a9ff;
-$radius: 4px;
+
  }
 
 </style>

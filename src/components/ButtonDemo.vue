@@ -3,10 +3,10 @@
     button 示例
    <h1> 示例</h1>
    <div>
-    <BUtton  @click="onClick"
+    <Button  @click="onClick"
              @focus="onClick"
             @mouseover="onClick"
-     >你好</BUtton>
+     >你好</Button>
    </div>
  
   </div>
