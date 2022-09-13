@@ -8,6 +8,10 @@
     <Button theme="link">链接</Button>
     <Button theme="text" >文本</Button>
    </div>
+   <hr>
+   <Button >正常</Button>
+   <Button size="big">大</Button>
+   <Button size="small">小</Button>
  
   </div>
 </template>
