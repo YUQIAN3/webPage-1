@@ -3,7 +3,10 @@
     button 示例
    <h1> 示例</h1>
    <div>
-    <BUtton>你好</BUtton>
+    <BUtton  @click="onClick"
+             @focus="onClick"
+            @mouseover="onClick"
+     >你好</BUtton>
    </div>
  
   </div>
@@ -11,6 +14,12 @@
 <script lang="ts">
   import Button from '../lib/Button.vue'
 export default {
-  component:{Button}
+  component:{Button},
+  setup(){
+    const onClick=()=>{
+      console.log('hello')
+    }
+    return {onClick}
+  }
 }
 </script>
