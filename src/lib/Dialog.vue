@@ -1,4 +1,5 @@
 <template>
+  <template v-if="visible">
   <div class="gulu-dialog-overlay"> </div>
   <div class="gulu-dialog-wrapper">
     <div class="gulu-dialog">
@@ -14,11 +15,18 @@
   </div>
   </div>
 </template>
+</template>
 <script lang="ts">
   import Button from './Button.vue'
  export default {
   components:{
     Button
+  },
+  props:{
+    visible:{
+      type:String,
+      default:false,
+    }
   }
  }
 </script>
