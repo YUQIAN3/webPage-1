@@ -1,7 +1,8 @@
 <template>
   <div> Dialog 展示</div>  
  <h1>示例1</h1>
- <Button @click="toggle">toggle</Button>
+ <div style="position:relative;z-index:1">
+  <Button @click="toggle">toggle</Button>
  <!-- <Dialog :visible="x" @update:visible="x=$event"></Dialog> 两种写法都可以，下面的是语法糖-->
   <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
     <template v-slot:title>
@@ -14,6 +15,8 @@
     </template>
   
    </Dialog>
+ </div>
+ <div style="position:relative;z-index:2;width:300px;height:300px;background:black;"></div>
    
 </template>
 <script lang="ts">
