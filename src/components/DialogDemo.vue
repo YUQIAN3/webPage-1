@@ -3,8 +3,18 @@
  <h1>示例1</h1>
  <Button @click="toggle">toggle</Button>
  <!-- <Dialog :visible="x" @update:visible="x=$event"></Dialog> 两种写法都可以，下面的是语法糖-->
-  <Dialog v-model:visible="x" :closeOnClickOverlay="false"
-   :ok="f1" :cancel="f2"></Dialog>
+  <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
+    <template v-slot:title>
+      <strong>记得写标题哦</strong>
+    </template>
+    
+    <template v-slot:content>
+      <strong>你好</strong>
+   <div>hi</div>
+    </template>
+  
+   </Dialog>
+   
 </template>
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
@@ -21,11 +31,10 @@ export default {
       x.value=!x.value
     }
     const f1=()=>{
-     
       return false
     }
     const f2=()=>{
-    
+  
     }
     return {x,toggle,f1,f2}
   }
