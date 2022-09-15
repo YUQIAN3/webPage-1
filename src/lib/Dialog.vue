@@ -15,7 +15,7 @@
     </footer>
   </div>
   </div>
-</teleport>
+  </teleport>
 </template>
 </template>
 <script lang="ts">
@@ -47,16 +47,17 @@
      }
    const OnClickOverlay=()=>{
        if(props.closeOnClickOverlay){
-        close()
+       close()
        }
       }
     const ok=()=>{
       if(props.ok && props.ok()!=false){
+    
         close()
       }
     }
     const cancel=()=>{
-      context.emit('cancel')
+      props.cancel && props.cancel()
       close()
     }
      return {close,OnClickOverlay,ok,cancel}
