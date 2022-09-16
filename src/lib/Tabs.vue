@@ -5,11 +5,11 @@
      v-for="(t,index) in titles" :key="index">{{t}}</div>
   </div>
   <div class="gulu-tabs-content">
-    {{current}}
     <!-- <component class="gulu-tabs-content-item"
     :is="current" /> -->
     <component class="gulu-tabs-content-item"
-    :is="current" />
+    :class="{selected:c.props.title===selected}"
+    v-for="(c,index) in defaults" :is="c" :key="index" />
 </div>
 </div>
 </template>
@@ -17,6 +17,7 @@
 <script lang="ts">
   import Tab from './Tab.vue'
   import {computed} from 'vue'
+import { log } from 'console'
 export default {
   props:{
     selected:{
@@ -30,8 +31,11 @@ export default {
       throw new Error('Tabs 的子标签必须是Tab')
     }
   })
+  console.log(defaults)
   const current=computed(()=>{
+  
    return defaults.filter((tag)=>{
+
     return tag.props.title===props.selected
   })[0]
   })
@@ -39,6 +43,7 @@ export default {
     return tag.props.title
   })
   const select=(title:string)=>{
+    console.log(title)
     context.emit('update:selected',title)
   }
   return {defaults,titles,current,select}
@@ -47,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $blue: #40a9ff;
+$blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
  .gulu-tabs {
@@ -70,11 +75,14 @@ $border-color: #d9d9d9;
   &-content {
     padding: 8px 0;
     &-item{
-      display:none;
+      color:red;
+      display: none;
     }
-    &.selected{
-      display: block;
+   & .selected{
+    color:red;
+      display: block; 
     }
   }
 }
+
 </style>
