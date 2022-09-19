@@ -36,6 +36,7 @@ export default {
   .topnavAndBanner{
     color:$color;
     background: linear-gradient(145deg, rgba(233,235,250,1) 0%, rgba(243,233,241,1) 99%);
+    clip-path: ellipse(80% 60% at 50% 40%) ;
   }
   .feature{
     >svg{
