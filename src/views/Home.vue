@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
@@ -10,19 +11,41 @@
       </p>
     </div>
   </div>
+  <div class="feature">
+  <svg class="icon" >
+    <use xlink:href="#icon-Vue"></use>
+</svg>
+<svg class="icon" >
+    <use xlink:href="#icon-ts"></use>
+</svg>
+<svg class="icon" >
+    <use xlink:href="#icon-light"></use>
+</svg>
+</div>
+</div>
 </template>
 <script lang="ts">
-import { inject, Ref } from '@vue/runtime-core';
 import Topnav from "../components/Topnav.vue";
 export default {
   components: { Topnav },
 };
 </script>
 <style lang="scss" scoped>
+  $purple:#917eb8;
+  $color:#6e5394;
   .topnavAndBanner{
+    color:$color;
     background: linear-gradient(145deg, rgba(233,235,250,1) 0%, rgba(243,233,241,1) 99%);
   }
+  .feature{
+    >svg{
+      width:64px;
+    height:64PX;
+    }
+   
+  }
   .banner{
+    color:$color;
     padding: 100px 0;
     display: flex;
     justify-content:center;
@@ -32,13 +55,14 @@ export default {
       padding:8px 0;
       a {
         margin:0  8px;;
-        background: #fff;
+        background: $purple ;
+        color:white;
         display: inline-block;
-        $h: 28px;
-        height: $h;
-        line-height: $h;
-        border-radius: $h/2;
-        padding: 0 8px;
+        border-radius: 8px;
+        padding: 8px 20px;
+        &:hover{
+          text-decoration: none;
+        }
       }
     }
   }
