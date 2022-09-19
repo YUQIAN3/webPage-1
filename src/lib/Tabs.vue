@@ -5,16 +5,16 @@
   <div class=" gulu-tabs-nav-item" @click="select(t)"   
     :class="{choose:t===choose}"
      v-for="(t,index) in titles" :key="index"
-     :ref="el=>{if(el) navItems[index]=el}" >{{t}}</div>
+     :ref="el=>{if(t===choose) chooseItems=el}" >{{t}}</div>
      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     
   <div class="gulu-tabs-content">
-   <!-- <component class="gulu-tabs-content-item"
-    :is="current" />  -->
-    <component class="gulu-tabs-content-item"
+   <component class="gulu-tabs-content-item"
+    :is="current" :key=current.props.title /> 
+    <!-- <component class="gulu-tabs-content-item"
     :class="{choose:c.props.title===choose}"
-    v-for="(c,index) in defaults" :is="c" :key="index" />
+    v-for="(c,index) in defaults" :is="c" :key="index" /> -->
 </div>
 </div>
 </div>
@@ -23,8 +23,7 @@
 
 <script lang="ts">
   import Tab from './Tab.vue'
-  import {computed,onMounted,onUpdated,ref} from 'vue'
-import { updateExpression } from '@babel/types'
+  import {computed,ref,watchEffect} from 'vue'
 export default {
   props:{
     choose:{
@@ -32,22 +31,18 @@ export default {
     }
   },
   setup(props,context){
-       const navItems=ref<HTMLDivElement[]>([])
+       const chooseItems=ref<HTMLDivElement>()
        const indicator=ref<HTMLDivElement>()
         const container=ref<HTMLDivElement>()
-       const  x=()=>{
-       const divs=navItems.value
-     const result=divs.filter(div=>div.classList.contains('choose'))[0]
-     const {width,left:left2}=result.getBoundingClientRect() 
-     if(indicator.value==undefined){  return}
-    indicator.value.style.width= width + 'px'
-    if(container.value==undefined){return }
-    const {left:left1}= container.value.getBoundingClientRect()
-    const left=left2-left1;
-    indicator.value.style.left= left + 'px'
-          }
-    onMounted(x ),
-    onUpdated(x)
+       watchEffect(()=>{
+        if(indicator.value==undefined ||container.value==undefined||chooseItems.value===undefined){ return}
+        const {width,left:left2}=chooseItems.value.getBoundingClientRect() 
+        const {left:left1}= container.value.getBoundingClientRect()
+        const left=left2-left1;
+        indicator.value.style.width= width + 'px'
+         indicator.value.style.left= left + 'px'
+          })
+    
   const defaults=context.slots.default()
   defaults.forEach((tag)=>{
     if(tag.type!=Tab){
@@ -69,7 +64,7 @@ export default {
     console.log(title)
     context.emit('update:choose',title)
   }
-  return {defaults,titles,current,select,navItems,indicator,container}
+  return {defaults,titles,current,select,chooseItems,indicator,container}
 }
   }
 </script>
@@ -108,14 +103,14 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
-    &-item{
-      color:red;
-      display: none;
-    }
-   & .choose{
-    color:red;
-      display: block; 
-    }
+   // &-item{
+    //  color:red;
+    //  display: none;
+    //} 
+ //& .choose{
+  //  color:red;
+   //   display: block; 
+   // }
 
 }
 }

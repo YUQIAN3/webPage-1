@@ -24,7 +24,6 @@ import { inject, Ref } from 'vue'
 
 <style lang="scss" scoped>
    .topnav{
-    background:pink;
     display: flex;
     padding :16px;
     position: fixed;
