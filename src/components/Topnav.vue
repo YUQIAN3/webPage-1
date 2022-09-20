@@ -2,7 +2,7 @@
     <div class="topnav">
         <router-link  to="/" class="logo">
           <svg class="icon">
-    <use xlink:href="#icon-icon-lunzi"></use>
+    <use xlink:href="#icon-chelun"></use>
 </svg></router-link >
         <ul class="menu">
           <li >

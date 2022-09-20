@@ -108,7 +108,7 @@ export default {
         border-radius: 8px;
         padding: 8px 20px;
         &:hover{
-          text-decoration: none;
+          text-decoration: underline;
         }
       }
     }
