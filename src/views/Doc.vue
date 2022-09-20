@@ -81,7 +81,7 @@ export default {
   }
 aside {
   background: lightblue;
-  width: 150px;
+  width: 180px;
   padding: 16px 0;
   position: fixed;
     padding-top: 70px;
@@ -93,11 +93,11 @@ aside {
     padding:0 16px;
   }
   > ol {
-   margin:0 -38px;
+   margin-left:-38px;
     > li {
       >a{
         display: block;
-       padding: 4px 16px;
+       padding: 4px 8px;
       }
       .router-link-active{
        background: white;
