@@ -51,7 +51,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  
+  .router-link-active{
+      color:#7d6bb4;
+  }
   .layout{
     display: flex;
     flex-direction: column;
@@ -80,7 +82,7 @@ export default {
     }
   }
 aside {
-  background: lightblue;
+  background: linear-gradient(145deg, rgba(233,235,250,1) 0%, rgba(243,233,241,1) 99%);
   width: 180px;
   padding: 16px 0;
   position: fixed;
@@ -93,17 +95,12 @@ aside {
     padding:0 16px;
   }
   > ol {
-   margin-left:-38px;
+     margin-left:-35px;
+    
     > li {
-      >a{
-        display: block;
-       padding: 4px 8px;
-      }
-      .router-link-active{
-       background: white;
-      
+       padding: 4px 20px;   
   }
-    }
+    
   }
 }
 main{

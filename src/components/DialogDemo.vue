@@ -17,7 +17,7 @@
    <hr>
    <h1>示例2</h1>
    <Button @click="showDialog">show</Button>
- <div style="position:relative;z-index:2;width:300px;height:300px;background:grey;"></div>
+ <div style="position:relative;z-index:2;width:300px;height:300px;background:#f0ecff;"></div>
    
 </template>
 <script lang="ts">

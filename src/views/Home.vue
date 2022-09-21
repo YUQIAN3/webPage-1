@@ -50,24 +50,31 @@ export default {
     clip-path: ellipse(80% 60% at 50% 40%) ;
   }
   .features{
-      padding:64px auto;
+      padding:32px auto;
      padding:0 16px;
-     width:400px;
      @media (min-width: 800px) {
     width: 800px;
-    
+    >ol{
+      >li{
+       width:33.3%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
-    
+    >ol{
+      >li{
+       width:33.3333%;
+       border: 1px solid red;
+      }
+    }
   }
   >ul{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   
   >li{
-    width:400px;
-    margin: 16px 0;
+    margin: 16px 20px;
    display: grid;
    justify-content: start;
    align-content: space-between;
