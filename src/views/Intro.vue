@@ -12,8 +12,4 @@
     </p>
   </div>
 </template>
-<style lang="scss">
-.markdown-body {
-  color: #264abd;
-}
-</style>
+<style lang="scss"></style>
