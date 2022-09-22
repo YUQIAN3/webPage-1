@@ -16,7 +16,7 @@ const history=createWebHashHistory()
     {path:'/', component: Home} ,
     {path:'/doc', component: Doc,
         children:[
-      {path:'',component:DocDemo}, 
+      {path:'',component:Intro}, 
       {path:'intro', component: Intro}, 
       {path:'get-start', component: GetStart}, 
       {path:'install', component: Install}, 
